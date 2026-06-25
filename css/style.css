@@ -1,0 +1,186 @@
+/* ==========================================================================
+   1. REGRAS GLOBAIS (RESET)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e bordas não quebrem o tamanho dos elementos */
+}
+
+html {
+    scroll-behavior: smooth; /* Faz a rolagem da página ser suave ao clicar no menu */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e moderna */
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Uma cor de fundo leve para o site */
+    color: #333333; /* Cor do texto principal */
+}
+/* ==========================================================================
+   2. MENU DE NAVEGAÇÃO (HEADER & NAV)
+   ========================================================================== */
+header {
+    position: fixed;    /* Fixa o menu no topo da tela */
+    top: 0;
+    left: 0;
+    width: 100%;        /* Garante que o menu ocupe toda a largura */
+    background-color: #1e293b; /* Uma cor escura elegante (Slate) */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve abaixo do menu */
+    z-index: 1000;      /* Garante que o menu fique sempre por cima do conteúdo */
+}
+
+nav {
+    max-width: 1200px;  /* Limita a largura máxima do menu em telas grandes */
+    margin: 0 auto;     /* Centraliza o menu na tela */
+    padding: 15px 20px; /* Dá um espaçamento interno em cima/baixo e lados */
+}
+
+nav ul {
+    list-style: none;   /* Remove as bolinhas da lista */
+    display: flex;      /* Alinha os itens em linha horizontal */
+    justify-content: center; /* Centraliza as opções no meio da barra */
+    gap: 30px;          /* Dá um espaço uniforme entre os links */
+}
+
+nav ul li a {
+    color: #ffffff;     /* Cor branca para o texto do link */
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    font-weight: 600;   /* Deixa a letra um pouco mais grossa/destacada */
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Efeito suave quando passa o mouse */
+}
+
+/* Efeito Hover (Muda de cor ao passar o mouse por cima) */
+nav ul li a:hover {
+    color: #38bdf8;     /* Cor azul claro (Sky Blue) ao passar o mouse */
+}
+/* ==========================================================================
+   3. ESTRUTURA DAS SEÇÕES (MAIN & SECTION)
+   ========================================================================== */
+main {
+    /* Dá um espaço no topo igual ao tamanho do menu para o texto não ficar escondido */
+    margin-top: 60px; 
+}
+
+section {
+    /* Faz com que cada seção ocupe no mínimo 100% da altura da tela do usuário */
+    min-height: 100vh; 
+    
+    /* Centraliza o conteúdo de cada seção verticalmente e horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Espaçamento interno para o conteúdo não encostar nas bordas */
+    padding: 40px 20px; 
+    text-align: center;
+}
+
+/* Alternância de cores de fundo para diferenciar visualmente as seções */
+#sobre, #portfolio {
+    background-color: #ffffff; /* Fundo Branco */
+}
+
+#formacao, #contato {
+    background-color: #f8fafc; /* Fundo Cinza bem clarinho */
+}
+
+/* Estilização dos títulos de cada seção */
+section h2 {
+    font-size: 2.5rem;
+    color: #1e293b; /* Mesma cor escura do menu para manter o padrão */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Uma barrinha decorativa charmosa embaixo de cada título */
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #38bdf8; /* Azul claro do efeito hover */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Estilização dos textos das seções */
+section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    color: #64748b; /* Cinza intermediário para leitura confortável */
+    margin-bottom: 15px;
+}
+/* ==========================================================================
+   4. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+#form-contato {
+    width: 100%;
+    max-width: 500px;     /* Limita a largura do formulário para não ficar gigante */
+    margin: 30px auto 0 auto; /* Centraliza o formulário na seção */
+    text-align: left;     /* Alinha os textos das etiquetas (labels) para a esquerda */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;   /* Arredonda os cantos do fundo do formulário */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra bem sutil ao redor */
+}
+
+.campo {
+    margin-bottom: 20px;  /* Dá um espaço entre um campo e outro */
+}
+
+#form-contato label {
+    display: block;       /* Faz o texto ficar acima do campo de entrada */
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 5px;
+}
+
+/* Estilização das caixas de texto e input */
+#form-contato input[type="text"],
+#form-contato input[type="email"],
+#form-contato textarea {
+    width: 100%;          /* Faz o campo ocupar toda a largura do formulário */
+    padding: 12px;        /* Espaço interno para o texto não ficar colado na borda */
+    border: 1px solid #cbd5e1; /* Borda cinza clara */
+    border-radius: 6px;   /* Cantos levemente arredondados */
+    font-size: 1rem;
+    font-family: inherit; /* Herda a mesma fonte do site */
+    color: #333333;
+    transition: border-color 0.3s ease;
+}
+
+/* Destaque quando o usuário clica para digitar no campo */
+#form-contato input:focus,
+#form-contato textarea:focus {
+    outline: none;
+    border-color: #38bdf8; /* Muda a borda para o azul padrão ao focar */
+}
+
+/* Define uma altura inicial fixa para a caixa de mensagem */
+#form-contato textarea {
+    height: 120px;
+    resize: vertical;     /* Permite ao usuário esticar apenas para baixo */
+}
+
+/* Estilização do Botão de Enviar */
+#form-contato button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #38bdf8; /* Azul padrão do tema */
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;      /* Transforma a seta do mouse na mãozinha de clique */
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito Hover do Botão */
+#form-contato button[type="submit"]:hover {
+    background-color: #0ea5e9; /* Um azul um pouco mais escuro ao passar o mouse */
+}
