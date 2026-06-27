@@ -1,5 +1,5 @@
 /* ==========================================================================
-   4. INTERATIVIDADE E VALIDAÇÃO DO FORMULÁRIO (DIA 04)
+   4. INTERATIVIDADE E VALIDAÇÃO DO FORMULÁRIO 
    ========================================================================== */
 
 // Espera o HTML carregar completamente antes de rodar o script
